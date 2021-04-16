@@ -1,11 +1,9 @@
 class SessionsController < ApplicationController
-
     before_action :require_logged_in, only: [:destroy]
 
     def new
         render :new
     end
-
 
     def create
         @user = User.find_by_credentials(
