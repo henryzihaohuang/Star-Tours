@@ -4,7 +4,6 @@ import { registerCredentialToken } from '../../actions/gmailAuthTokenActions';
 import auth0js from 'auth0-js';
 
 function LoginHandler({
-  onError = console.error,
   onNotFound = () => {},
   registerCredentialToken,
 }) {
@@ -14,7 +13,6 @@ function LoginHandler({
     const afterSignInPath = window.sessionStorage.getItem('afterSignInPath');
     if (afterSignInPath) {
       window.sessionStorage.removeItem('afterSignInPath');
-      // Hard redirect for now due to redirecting via history gets tangled with the other redirects in /App
       window.location = afterSignInPath;
     } else {
       localStorage.clear()
@@ -38,7 +36,7 @@ function LoginHandler({
             document.title,
             window.location.pathname + window.location.search,
           );
-          return onError(error);
+          return console.log(error);
         }
         if (!authResult) {
           return onNotFound();

@@ -45,11 +45,11 @@ export const signup = (formUser) => {
 
 
 export const login = (formUser) => {
-    
     return (dispatch) => {
         return postSession(formUser)
             .then(
-                (currentUser)=> dispatch(receiveCurrentUser(currentUser)),(errors) => dispatch(receiveErrors(errors.responseJSON)));
+                (currentUser)=> dispatch(receiveCurrentUser(currentUser)),
+                (errors) => dispatch(receiveErrors(errors.responseJSON)));
     }
 }
 

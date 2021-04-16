@@ -1,4 +1,48 @@
-.google-login{
+.splash-container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    background-color:beige;
+}
+
+.splash-subcontainer{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.google-login, .demo-login{
+    font-family:'Helvetica Neue', sans-serif;
+    font-weight:500;
+    color:white;
+    font-size: 17px;
+    word-wrap: wrap;
+    margin:16px;
+    height:30px;
+    padding:22px;
+
+    border-radius:40px; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b3543;
+}
+
+.google-login:hover, .google-login:focus, .demo-login:hover, .demo-login:focus{
+    background-color: beige;
+    color:#2b3543;
+    outline:none;
+}
+
+.splash-banner{
     display:flex;
     justify-content:center;
+    flex-direction:column;
 }

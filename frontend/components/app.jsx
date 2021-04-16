@@ -1,14 +1,14 @@
 import React from 'react';
-import LoginPage from './splash/LoginPage';
+import Splash from './splash/Splash';
+import Dashboard from './dashboard/Dashboard';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/routeUtil';
-
 
 const App = () => {
     return (
         <div>
-            <Route exact path="/" component={LoginPage} />
-            <AuthRoute exact path="/login" component={LoginPage} />
+            <Route exact path="/" component={Splash} />
+            <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
         </div>
     )
 };
