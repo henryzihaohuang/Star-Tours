@@ -1,6 +1,7 @@
 const path = require('path');
-
-module.exports = {
+const webpack = require('webpack');
+const isProduction = process.env.NODE_ENV === 'production';
+const config = {
     entry: './frontend/starwars.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
@@ -22,5 +23,21 @@ module.exports = {
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx', '*'],
-    }
+    },
+    plugins:[]
 };
+
+if (isProduction) {
+    config.plugins.push(
+    new webpack.EnvironmentPlugin([
+        'NODE_ENV',
+        'AUTH0_CLIENT_ID',
+        'AUTH0_DOMAIN'
+    ]),
+    );
+} else {
+    const Dotenv = require('dotenv-webpack');
+    config.plugins.push(new Dotenv());
+}
+
+module.exports = config;

@@ -1,4 +1,4 @@
-import { REGISTER_CREDENTIAL_TOKEN, DESTROY_CREDENTIAL_TOKEN } from '../../actions/session';
+import { REGISTER_CREDENTIAL_TOKEN, DESTROY_CREDENTIAL_TOKEN } from '../actions/gmailAuthTokenActions';
 
 const gmailAuthTokenReducer = (state = null, action) => {
     switch (action.type) {

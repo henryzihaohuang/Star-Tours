@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import gmailAuthTokenReducer from './credentialTokenReducer';
-import sessionReducer from './session/session_reducer';
+import gmailAuthTokenReducer from './gmailAuthTokenReducer';
+import sessionReducer from './sessionReducer';
 
 const reducers = {
     session: sessionReducer,

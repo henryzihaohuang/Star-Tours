@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-
     before_action :require_logged_in, only: [:show]
 
     def create
         @user = User.new(user_params)
-        # debugger
         if @user.save
             login!(@user)
             render :show
@@ -19,22 +17,9 @@ class UsersController < ApplicationController
         render :show
     end
 
-
-    def update
-        debugger
-        @user = current_user
-
-        new_balance = current_user.balance + params[:amount].to_f
-
-        current_user.update(balance: new_balance)
-
-        render :show
-    end
-    
-
     private 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password, :balance)
+        params.require(:user).permit(:uid, :first_name, :last_name, :email, :image_url, :google_token, :google_refresh_token)
     end
 
 end
