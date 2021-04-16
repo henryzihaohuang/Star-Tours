@@ -1,12 +1,14 @@
-import React, { useDispatch } from 'react';
+import React from 'react';
+import {useDispatch} from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import auth0js from 'auth0-js';
-import { login } from '../../actions/sessionActions';
+import { receiveCurrentUser } from '../../actions/sessionActions';
 const gmailMetadataScope = 'https://www.googleapis.com/auth/gmail.metadata';
 
 function LoginButton() {
+  const dispatch = useDispatch();
   const clientID = process.env.AUTH0_CLIENT_ID;
   const domain = process.env.AUTH0_DOMAIN;
 
@@ -27,10 +29,15 @@ function LoginButton() {
     });
 
   const handleDemo = () => {
-    const dispatch = useDispatch();
-    const demoUser = { email: "carriefisher4ever@gmail.com", password: "password123" };
-    dispatch(login(demoUser));
-  }
+    dispatch(receiveCurrentUser({ 
+      id: 1,
+      first_name: "Carrie",
+      last_name: "Fisher",
+      email: "carriefisher4ever@gmail.com",
+      password: "password123" 
+    }))
+
+  };
     
   return (
     <Row float="center">
@@ -47,7 +54,7 @@ function LoginButton() {
           Sign In With Google
         </Button>
 
-        <Button className="demo-login" onClick={handleDemo()}>
+        <Button className="demo-login" onClick={()=>handleDemo()}>
           Demo Login
         </Button>
       </Col>

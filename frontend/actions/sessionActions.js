@@ -12,7 +12,6 @@ export const receiveCurrentUser = currentUser => ({
         lastName: currentUser.last_name,
         email: currentUser.email,
         password: currentUser.password,
-        balance: currentUser.balance
     }
 });
 
@@ -33,7 +32,6 @@ export const signup = (formUser) => {
         last_name: formUser.lastName,
         email: formUser.email,
         password: formUser.password,
-        balance: formUser.balance
     }
 
     return (dispatch) => {
@@ -45,6 +43,7 @@ export const signup = (formUser) => {
 
 
 export const login = (formUser) => {
+    debugger;
     return (dispatch) => {
         return postSession(formUser)
             .then(

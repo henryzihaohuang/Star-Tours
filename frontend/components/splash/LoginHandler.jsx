@@ -10,6 +10,10 @@ function LoginHandler({
 
   const onSuccess = authResult => {
     registerCredentialToken(authResult.idToken);
+    window.sessionStorage.setItem(
+      'afterSignInPath',
+      `${location.pathname}/dashboard`,
+    );
     const afterSignInPath = window.sessionStorage.getItem('afterSignInPath');
     if (afterSignInPath) {
       window.sessionStorage.removeItem('afterSignInPath');
