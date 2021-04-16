@@ -3,7 +3,6 @@ import LoginButton from './LoginButton';
 import LoginHandler from './LoginHandler';
 
 const Splash = () => {
-
   return (
     <section>
       <div className="splash-container">

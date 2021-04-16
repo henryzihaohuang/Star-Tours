@@ -21,8 +21,8 @@ const logoutCurrentUser = () => ({
 
 export const receiveErrors = errors => {
     return {
-            type: RECEIVE_ERRORS,
-            errors
+        type: RECEIVE_ERRORS,
+        errors
     }
 };
 
@@ -40,7 +40,6 @@ export const signup = (formUser) => {
             (errors) => dispatch(receiveErrors(errors.responseJSON)));
     }
 } 
-
 
 export const login = (formUser) => {
     debugger;

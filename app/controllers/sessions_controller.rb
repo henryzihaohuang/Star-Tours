@@ -18,14 +18,14 @@ class SessionsController < ApplicationController
     end
 
     def create
+        debugger
         @user = User.find_by_credentials(
             params[:user][:email],
             params[:user][:password]
         )
-
         if @user
             login!(@user)
-            render "/users/show"
+            render "/api/users/show"
         else
             render json: ["Unable to log in with provided credentials."],
             status: 401
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
         @user = current_user
         if @user
             logout
-            render "/users/show"
+            render "/api/users/show"
         else
             render json: ["Please sign in"], status: 404
         end
