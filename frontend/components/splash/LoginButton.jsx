@@ -43,8 +43,7 @@ function LoginButton() {
   return (
     <Row float="center">
       <Col className="splash-banner">
-        <img src="https://i.ibb.co/2t6w5Tk/new-story-assessment-logo.png" alt="the-force-fan-club-logo" />
-
+        
         <Button className="google-login" onClick={handleGmailLogin}>
           <img
             src="https://img.icons8.com/bubbles/344/google-logo.png"
