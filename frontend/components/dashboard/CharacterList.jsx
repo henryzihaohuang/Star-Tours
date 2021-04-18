@@ -6,19 +6,18 @@ import { fetchCharacters, addFavoriteCharacter, fetchFavoriteCharacters } from '
 
 function CharacterList (){
     const [people, setPeople] = useState([]) 
-    const [favoriteCharacters, setfavoriteCharacters] = useState([])
 
     useEffect(() => {
         fetchCharacters().then(data => setPeople(data))
-        fetchFavoriteCharacters().then(favs=>setfavoriteCharacters(favs))
     }, [])
 
 
-    const handleAddFavorite = () => {
-        addFavoriteCharacter({character_id: 1})
+    const handleAddFavorite = (characterIdx) => {
+        addFavoriteCharacter({character_id: characterIdx})
     }
 
     if (!people) return <LoadingSpinner />;
+
     const shuffle = (peopleArray) => {
         let currentIndex = peopleArray.length, temporaryValue, randomIndex;
     
@@ -34,18 +33,21 @@ function CharacterList (){
             peopleArray[currentIndex] = peopleArray[randomIndex];
             peopleArray[randomIndex] = temporaryValue;
         }
-    
         return peopleArray;
     };
 
     return(
-        <div>
-            { shuffle(people).map((characterCard, idx) => (<span key={idx} >{characterCard.name}</span>)) }
-
-            <div onClick={handleAddFavorite}>+</div>
-        </div>
+        <Row className="character-list-container">
+            <Col>
+            { shuffle(people).map((characterCard, idx) => (
+                <span key={idx} >
+                    {characterCard.name}
+                    <div onClick={() => handleAddFavorite(idx+1)}>+</div>
+                </span>
+                ))
+            };
+            </Col>
+        </Row>
     )
-
-
 }
 export default CharacterList;
