@@ -1,15 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoadingSpinner from './LoadingSpinner';
-import { fetchCharacters } from '../../utils/swapiUtil';
+import { fetchCharacters, addFavoriteCharacter, fetchFavoriteCharacters } from '../../utils/swapiUtil';
 
 function CharacterList (){
-    const [people, setPeople] = useState([])  
+    const [people, setPeople] = useState([]) 
+    const [favoriteCharacters, setfavoriteCharacters] = useState([])
 
     useEffect(() => {
         fetchCharacters().then(data => setPeople(data))
+        fetchFavoriteCharacters().then(favs=>setfavoriteCharacters(favs))
     }, [])
+
+
+    const handleAddFavorite = () => {
+        addFavoriteCharacter({character_id: 1})
+    }
 
     if (!people) return <LoadingSpinner />;
     const shuffle = (peopleArray) => {
@@ -23,9 +30,9 @@ function CharacterList (){
             currentIndex -= 1;
     
             // And swap it with the current element.
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
+            temporaryValue = peopleArray[currentIndex];
+            peopleArray[currentIndex] = peopleArray[randomIndex];
+            peopleArray[randomIndex] = temporaryValue;
         }
     
         return peopleArray;
@@ -33,7 +40,9 @@ function CharacterList (){
 
     return(
         <div>
-            { shuffle(people).map((characterCard, idx) => (<span key={idx}>{characterCard}</span>)) }
+            { shuffle(people).map((characterCard, idx) => (<span key={idx} >{characterCard.name}</span>)) }
+
+            <div onClick={handleAddFavorite}>+</div>
         </div>
     )
 

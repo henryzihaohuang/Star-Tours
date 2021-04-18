@@ -22,3 +22,18 @@ export const fetchCharacters = async () => {
       console.log('Error: could not load character information', error);
     }
 };
+
+export const addFavoriteCharacter = (character) => (
+  $.ajax({
+      method: 'POST',
+      url: '/api/favorites',
+      data: { character }
+  })
+);
+
+export const fetchFavoriteCharacters = () => (
+  $.ajax({
+      method: 'GET',
+      url: '/api/favorites'
+  })
+);
