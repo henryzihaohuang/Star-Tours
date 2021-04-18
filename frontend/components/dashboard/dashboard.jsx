@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Profile from './profile'
+import Profile from './Profile'
 
 function Dashboard (){
     return(
