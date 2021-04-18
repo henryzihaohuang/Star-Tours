@@ -18,7 +18,7 @@ function LoginButton() {
     auth0WebAuth.authorize({
       scope: 'openid email',
       responseType: 'token id_token',
-      redirectUri: `${window.location.origin}/login`,
+      redirectUri: `${window.location.origin}`,
       connection: 'google-oauth2',
       connectionScope: [gmailMetadataScope].join(','),
       prompt: 'consent',
