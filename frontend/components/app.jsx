@@ -4,12 +4,11 @@ import Dashboard from './dashboard/Dashboard';
 import { AuthRoute, ProtectedRoute } from '../utils/routeUtil';
 
 const App = ({state}) => {
+  
     return (
         <div>
             <AuthRoute exact path="/" component={Splash} />
-            <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
-
-
+            <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         </div>
     )
 };

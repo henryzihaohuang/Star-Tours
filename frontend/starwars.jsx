@@ -7,7 +7,6 @@ import * as APISwapiUtil from "./utils/swapiUtil";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
-debugger
     
   if (window.currentUser) {
     store.dispatch(receiveCurrentUser(window.currentUser))
@@ -18,8 +17,7 @@ debugger
   window.login = login;
   window.signup = signup;
   window.logout = logout;
-
-  window.fetchCharacter = APISwapiUtil.fetchCharacter;
+  window.fetchCharacter = APISwapiUtil.fetchCharacters;
   //Testing
 
   const root = document.getElementById('root');

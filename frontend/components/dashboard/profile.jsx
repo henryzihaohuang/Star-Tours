@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { logout } from '../../actions/sessionActions';
 import Button from 'react-bootstrap/Button';
-import LoadingSpinner from './Spinner';
+import LoadingSpinner from './LoadingSpinner';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,12 +12,12 @@ function Profile() {
     const currentUser = useSelector(state => state.session.currentUser)
 
     if (!currentUser) return <LoadingSpinner />;
-    console.log(currentUser);
     return(
         <Row className="profile-sidebar-container">
             <Col className="profile-sidebar-subcontainer">
-                <div>
-                    <img src="https://i.ibb.co/m90Gr5L/coollogo-com-29380706.png" alt="profile-neon-header" />
+
+                <div className="profile-picture-container">
+                    <img className="profile-picture" src="https://i.ibb.co/m90Gr5L/coollogo-com-29380706.png" alt="profile-neon-header" />
                 </div>
                 <div>
                     <Button onClick={()=> dispatch(logout())}>Logout</Button>

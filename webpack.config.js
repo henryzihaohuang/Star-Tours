@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const isProduction = process.env.NODE_ENV === 'production';
 const config = {
-    entry: './frontend/starwars.jsx',
+    entry: ["regenerator-runtime/runtime.js", './frontend/starwars.jsx'],
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         filename: 'bundle.js'
