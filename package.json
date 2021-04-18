@@ -31,6 +31,8 @@
     "@babel/preset-react": "^7.13.13",
     "auth0-js": "9.13.4",
     "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
+    "cors-anywhere": "^0.4.4",
     "css-loader": "^5.2.2",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.5.5",

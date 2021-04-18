@@ -1,14 +1,14 @@
 export const characters = [
-  "http://swapi.co/api/people/1",
-  "http://swapi.co/api/people/2",
-  "http://swapi.co/api/people/3",
-  "http://swapi.co/api/people/4",
-  "http://swapi.co/api/people/5",
-  "http://swapi.co/api/people/6",
-  "http://swapi.co/api/people/7",
-  "http://swapi.co/api/people/8",
-  "http://swapi.co/api/people/9",
-  "http://swapi.co/api/people/10",
+  "http://swapi.dev/api/people/1/",
+  "http://swapi.dev/api/people/2/",
+  "http://swapi.dev/api/people/3/",
+  "http://swapi.dev/api/people/4/",
+  "http://swapi.dev/api/people/5/",
+  "http://swapi.dev/api/people/6/",
+  "http://swapi.dev/api/people/7/",
+  "http://swapi.dev/api/people/8/",
+  "http://swapi.dev/api/people/9/",
+  "http://swapi.dev/api/people/10/",
 ];
 
 export const fetchCharacters = async () => {
@@ -22,13 +22,3 @@ export const fetchCharacters = async () => {
       console.log('Error: could not load character information', error);
     }
 };
-
-//   export const fetchCharacters = () => {
-//     debugger;
-//     characters.map(characterUrl => {
-//       return $.ajax({
-//           method: 'GET',
-//           url: `${characterUrl}`
-//       });
-//     });
-// };
