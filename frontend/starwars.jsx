@@ -7,6 +7,7 @@ import * as APISwapiUtil from "./utils/swapiUtil";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
+debugger
     
   if (window.currentUser) {
     store.dispatch(receiveCurrentUser(window.currentUser))

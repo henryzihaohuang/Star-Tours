@@ -1,9 +1,5 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
     before_action :require_logged_in, only: [:destroy]
-
-    def new
-        render :new
-    end
 
     def new_auth0_user
         return head :unauthorized if params[:auth0_client_id] != ENV['AUTH0_CLIENT_ID']
@@ -18,7 +14,6 @@ class SessionsController < ApplicationController
     end
 
     def create
-        debugger
         @user = User.find_by_credentials(
             params[:user][:email],
             params[:user][:password]
@@ -32,17 +27,6 @@ class SessionsController < ApplicationController
         end
     end
     
-
-    def destroy 
-        @user = current_user
-        if @user
-            logout
-            render "/api/users/show"
-        else
-            render json: ["Please sign in"], status: 404
-        end
-    end
-
     def destroy
         logout!
         render json: { message: 'Logout successful' }

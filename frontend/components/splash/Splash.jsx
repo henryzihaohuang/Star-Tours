@@ -1,8 +1,24 @@
 import React from 'react';
 import LoginButton from './LoginButton';
 import LoginHandler from './LoginHandler';
+import Button from 'react-bootstrap/Button';
+import {useDispatch} from 'react-redux';
+import { login } from '../../actions/sessionActions';
 
-const Splash = () => {
+function Splash () {
+  const dispatch = useDispatch();
+
+  const handleDemo = () => {
+    dispatch(login({ 
+      id: 1,
+      firstName: "Carrie",
+      lastName: "Fisher",
+      email: "carriefisher4ever@gmail.com",
+      password: "password123" 
+    }));
+  };
+
+
   return (
     <section>
       <div className="splash-container">
@@ -12,6 +28,10 @@ const Splash = () => {
              Do you walk through these doors? (Y/N)
             <LoginHandler />
             <LoginButton />
+
+            <Button className="demo-login" onClick={()=>handleDemo()}>
+              Demo Login
+            </Button>
           </span>
         </div>
       </div>
