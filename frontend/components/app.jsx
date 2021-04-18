@@ -6,8 +6,8 @@ import { AuthRoute, ProtectedRoute } from '../utils/routeUtil';
 const App = ({state}) => {
     return (
         <div>
-            <AuthRoute path="/" component={Splash} />
-            <ProtectedRoute path="/dashboard" component={Dashboard}/>
+            <AuthRoute exact path="/" component={Splash} />
+            <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
 
 
         </div>

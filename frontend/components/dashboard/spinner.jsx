@@ -1,7 +1,7 @@
 import React from 'react';
 import Spinner from 'react-spinkit';
 
-const Spinner = () => {
+const LoadingSpinner = () => {
   return (
     <div
       style={{
@@ -18,4 +18,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default LoadingSpinner;

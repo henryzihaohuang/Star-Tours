@@ -5,8 +5,10 @@ import Profile from './Profile'
 
 function Dashboard (){
     return(
-        <section>
-            <Profile />
+        <section className="dashboard-container">
+            <div className="dashboard-subcontainer">
+                <Profile />
+            </div>
         </section>
     )
 };
