@@ -37,3 +37,10 @@ export const fetchFavoriteCharacters = () => (
       url: '/api/favorites'
   })
 );
+
+export const fetchShowCharacter = (num) => (
+  $.ajax({
+      method: 'GET',
+      url: `http://swapi.dev/api/people/${num}/`
+  })
+);
