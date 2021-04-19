@@ -55,6 +55,7 @@
     background-color: #ffd000;
     cursor:pointer;
 }
+
 //profile sidebar
 .profile-sidebar-container{
     width:302px;
@@ -65,17 +66,24 @@
     align-items: center;
     justify-content: center;
     margin-right:300px;
+    
 
     .profile-sidebar-subcontainer{
         box-shadow: 0px 0px 20px 11px rgba(87, 87, 87, 0.56) ;
         border:1px solid rgb(70, 69, 69);
         border-radius:3px;
         background-color:#1e2124;
-        height:459px;
+        height:120%;
+        margin-top:220px;
+        border-radius:10px;
     }
 
     .profile-sidebar {
-        height:900px;
+        height:1000px;
+    }
+
+    .profile-picture-container{
+        border-radius:40px;
     }
 
     .profile-sidebar-elements{
@@ -96,22 +104,21 @@
 
     .profile-header{
         font-family:'Helvetica Neue', sans-serif;
-        font-weight:500;
+        font-weight:600;
         color: #ffd000;
-        font-size: 14px;
+        font-size: 28px;
         margin:16px;
         height:30px;
         padding:22px;
-        letter-spacing: 3px;
-
-        border-radius:40px; 
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background-color: #202020;
+        letter-spacing: 2px;
     }
 
+    .profile-name-field, .profile-email-field, .profile-favorites-field{
+        font-family:'Helvetica Neue', sans-serif;
+        font-weight:500;
+        color: #ffd000;
+        font-size: 22px;
+        width:100%;
+        margin-top:16px;
+    }
 }

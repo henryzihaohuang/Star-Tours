@@ -40,13 +40,28 @@ function CharacterList (){
     };
 
     return(
-        <Row >
-            <Col>
+        <Row className="character-list-container">
+            <Col className="character-list-subcontainer">
+            <span className="character-list-header">
+                Add your favorite characters:
+            </span>
             { shuffle(people).map((characterCard, idx) => (
-                <span key={idx} className="character-list-container">
-                    {characterCard.name}
-                    <div onClick={() => handleAddFavorite(characterCard.id)}>+</div>
-                </span>
+                <div>
+                    <span key={idx} className="character-list-container">
+                        {characterCard.name}  
+                        <div onClick={() => handleAddFavorite(characterCard.id)}>+</div>
+                    </span>
+                    <div>
+                        <span>Gender: {characterCard.gender}</span>
+                        <span>Birth year: {characterCard.birth_year}</span>
+                        <span>Skin color: {characterCard.skin_color}</span>
+                        <span>Hair color: {characterCard.hair_color}</span>
+                        <span>Height: {characterCard.height} cm</span>
+                        <span>Eye color: {characterCard.eye_color}</span>
+                        <span>Weight: {characterCard.mass} kg</span>
+                    </div>
+                </div>
+                
                 ))
             };
             </Col>
