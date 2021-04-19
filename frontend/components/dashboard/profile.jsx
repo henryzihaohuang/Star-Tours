@@ -30,7 +30,7 @@ function Profile() {
             />
             Name: {currentUser.firstName} {currentUser.lastName}
             E-mail: {currentUser.email}
-            Favorites : {favoriteCharacters.map(favs => (<span>{favs.character_id}</span>))}
+            Favorites : {favoriteCharacters.map((favs, idx) => (<span key={idx}>{favs.character_id}</span>))}
           </div>
         </div>
       </Col>
