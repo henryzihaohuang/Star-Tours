@@ -4,6 +4,8 @@ import LoadingSpinner from "./LoadingSpinner";
 import { fetchFavoriteCharacters } from "../../utils/swapiUtil";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { logout } from "../../actions/sessionActions";
+import Button from "react-bootstrap/Button";
 
 function Profile() {
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -42,6 +44,11 @@ function Profile() {
                 <span key={idx}>{favs.character_id}</span>
               ))}
             </div>
+            <div>
+          <Button onClick={() => dispatch(logout())} className="logout-btn">
+            LOGOUT
+          </Button>
+        </div>
           </div>
         </div>
       </Col>

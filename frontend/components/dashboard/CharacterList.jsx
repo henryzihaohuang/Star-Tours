@@ -43,11 +43,10 @@ function CharacterList (){
                 Add your favorite characters:
             </span>
             { shuffle(people).map((characterCard, idx) => (
-                <div>
-                    <span key={idx} className="character-list-container">
-                        <div></div>
-                        {characterCard.name}  
-                        <div onClick={() => handleAddFavorite(characterCard.id)}>+</div>
+                <div className="character-card-block">
+                    <span key={idx} className="character-list-element">
+                        <div className="character-list-name">{characterCard.name} </div>
+                        <div className="character-list-add" onClick={() => handleAddFavorite(characterCard.id)}>+</div>
                     </span>
                     <div className="character-list-item-bio">
                         <span key={`${idx}-id`}>Id: {characterCard.id}</span>
