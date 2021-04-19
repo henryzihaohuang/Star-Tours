@@ -21,7 +21,7 @@ function Splash () {
         <div className="splash-subcontainer">
           <span className="splash-banner">
             <div className="splash-image-container">
-              <img src="https://i.ibb.co/2t6w5Tk/new-story-assessment-logo.png" alt="the-force-fan-club-logo" />
+              <img src="https://i.ibb.co/2t6w5Tk/new-story-assessment-logo.png" alt="star-tours-logo" />
             </div>
             <div className="splash-text-container">
               Do you walk through these doors? (Y/N)

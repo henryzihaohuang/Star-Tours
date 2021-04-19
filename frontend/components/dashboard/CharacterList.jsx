@@ -52,7 +52,7 @@ function CharacterList() {
             <span key={idx} className="character-list-element">
               <Link
                 to={{
-                    pathname: '/character/:character_id',
+                    pathname: `/character/${characterCard.id}`,
                     characterId: characterCard.id}
                }
               >
@@ -71,21 +71,11 @@ function CharacterList() {
             <div className="character-list-item-bio">
               <span key={`${idx}-id`}>Id: {characterCard.id}</span>
               <span key={`${idx}-gender`}> Gender: {characterCard.gender}</span>
-              <span key={`${idx}-birth`}>
-                Birth year: {characterCard.birth_year}
-              </span>
-              <span key={`${idx}-skin`}>
-                Skin color: {characterCard.skin_color}
-              </span>
-              <span key={`${idx}-hair`}>
-                Hair color: {characterCard.hair_color}
-              </span>
-              <span key={`${idx}-height`}>
-                Height: {characterCard.height} cm
-              </span>
-              <span key={`${idx}-eye`}>
-                Eye color: {characterCard.eye_color}
-              </span>
+              <span key={`${idx}-birth`}>Birth year: {characterCard.birth_year}</span>
+              <span key={`${idx}-skin`}>Skin color: {characterCard.skin_color}</span>
+              <span key={`${idx}-hair`}>Hair color: {characterCard.hair_color}</span>
+              <span key={`${idx}-height`}>Height: {characterCard.height} cm</span>
+              <span key={`${idx}-eye`}>Eye color: {characterCard.eye_color}</span>
               <span key={`${idx}-weight`}>Weight: {characterCard.mass} kg</span>
             </div>
           </div>
