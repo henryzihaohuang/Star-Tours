@@ -40,8 +40,8 @@ function Profile() {
               E-mail: {currentUser.email}
             </div>
             <div className="profile-favorites-field">
-              Favorites : {favoriteCharacters.map((favs, idx) => (
-                <span key={idx}>{favs.character_id}</span>
+              Favorite Character Ids : {favoriteCharacters.map((favs, idx) => (
+                <span key={idx}>{favs.character_id},</span>
               ))}
             </div>
             <div>
