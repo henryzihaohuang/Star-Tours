@@ -25,6 +25,7 @@ function Profile() {
         <div className="profile-header">
           Welcome back, {`${currentUser.firstName}`}!
         </div>
+
         <div className="profile-sidebar">
           <div className="profile-sidebar-elements">
             <div className="profile-picture-container">
@@ -34,22 +35,26 @@ function Profile() {
                 style={{ height: "44vh" }}
               />
             </div>
+
             <div className="profile-name-field">
               Name: {currentUser.firstName} {currentUser.lastName}
             </div>
+
             <div className="profile-email-field">
               E-mail: {currentUser.email}
             </div>
+
             <div className="profile-favorites-field">
               Favorite Character Ids : {favoriteCharacters.map((favs, idx) => (
                 <span key={idx}>{favs.character_id},</span>
               ))}
             </div>
+
             <div>
-          <Button onClick={() => dispatch(logout())} className="logout-btn">
-            LOGOUT
-          </Button>
-        </div>
+              <Button onClick={() => dispatch(logout())} className="logout-btn">
+                LOGOUT
+              </Button>
+            </div>
           </div>
         </div>
       </Col>

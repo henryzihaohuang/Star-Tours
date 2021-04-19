@@ -23,8 +23,6 @@ function CharacterList() {
     addFavoriteCharacter({ character_id: characterIdx });
   };
 
-  if (!people) return <LoadingSpinner />;
-
   const shuffle = (peopleArray) => {
     let currentIndex = peopleArray.length,
       temporaryValue,
@@ -41,6 +39,7 @@ function CharacterList() {
     return peopleArray;
   };
 
+  if (!people) return <LoadingSpinner />;
   return (
     <Row className="character-list-container">
       <Col className="character-list-subcontainer">

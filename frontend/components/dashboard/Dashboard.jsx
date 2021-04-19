@@ -4,7 +4,6 @@ import Profile from "./Profile";
 import CharacterList from "./CharacterList";
 
 function Dashboard() {
-
   return (
     <section className="dashboard-container">
       <div className="dashboard-subcontainer">
