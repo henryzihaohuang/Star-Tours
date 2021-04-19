@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "./LoadingSpinner";
 import { fetchFavoriteCharacters } from "../../utils/swapiUtil";
 import Row from "react-bootstrap/Row";
@@ -8,6 +8,7 @@ import { logout } from "../../actions/sessionActions";
 import Button from "react-bootstrap/Button";
 
 function Profile() {
+  const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.currentUser);
   const [favoriteCharacters, setfavoriteCharacters] = useState([]);
 

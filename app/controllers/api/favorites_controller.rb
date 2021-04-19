@@ -17,4 +17,8 @@ class Api::FavoritesController < ApplicationController
         end
     end
 
+    def show
+        render :show
+    end
+
 end
