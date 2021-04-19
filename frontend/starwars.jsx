@@ -8,6 +8,7 @@ import * as APISwapiUtil from "./utils/swapiUtil";
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
     
+  //Persist current user
   if (window.currentUser) {
     store.dispatch(receiveCurrentUser(window.currentUser))
     delete window.currentUser;

@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoadingSpinner from './LoadingSpinner';
-import { fetchCharacters, addFavoriteCharacter, fetchFavoriteCharacters } from '../../utils/swapiUtil';
+import { fetchCharacters, addFavoriteCharacter } from '../../utils/swapiUtil';
 
 function CharacterList (){
     const [people, setPeople] = useState([]) 
 
     useEffect(() => {
-        fetchCharacters().then(data => setPeople(data))
+        fetchCharacters().then(data => setPeople(data.map((character,idx) => ({
+            ...character, 
+            id: idx+1
+        }))))
     }, [])
 
 
@@ -37,12 +40,12 @@ function CharacterList (){
     };
 
     return(
-        <Row className="character-list-container">
+        <Row >
             <Col>
             { shuffle(people).map((characterCard, idx) => (
-                <span key={idx} >
+                <span key={idx} className="character-list-container">
                     {characterCard.name}
-                    <div onClick={() => handleAddFavorite(idx+1)}>+</div>
+                    <div onClick={() => handleAddFavorite(characterCard.id)}>+</div>
                 </span>
                 ))
             };

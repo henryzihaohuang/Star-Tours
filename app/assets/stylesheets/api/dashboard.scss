@@ -3,24 +3,57 @@
     width: 100%;
     height: 1000vh;
     //change when 3rd mvp is done
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.836);
     display:flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 .character-list-container{
-    margin-left:100px;
-    margin-bottom:33px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:white;
+    font-family:'Helvetica Neue', sans-serif;
+    font-weight:500;
+    color: #ffd000;
+    font-size: 14px;
+    margin-left:160px;
+    margin-bottom: 33px;
+    height:30px;
+    padding:22px;
+    letter-spacing: 3px;
+
+    border-radius:40px; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
 }
 
 .logout-btn{
-    color:white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 2px;
-    font-weight: 700;
+    font-family:'Helvetica Neue', sans-serif;
+    font-weight:500;
+    color: #ffd000;
+    font-size: 14px;
+    margin:16px;
+    height:30px;
+    padding:22px;
+    letter-spacing: 3px;
+
+    border-radius:40px; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+}
+
+.logout-btn:hover, .character-list-container:hover{
+    color:black;
+    background-color: #ffd000;
+    cursor:pointer;
 }
 //profile sidebar
 .profile-sidebar-container{
@@ -50,6 +83,35 @@
         flex-direction: column;
         justify-content: left;
         align-items: center;
+        font-family:'Helvetica Neue', sans-serif;
+        font-weight:500;
+        color: #ffd000;
+        font-size: 14px;
+        margin:16px;
+        height:30px;
+        padding:22px;
+        letter-spacing: 3px;
+        
+    }
+
+    .profile-header{
+        font-family:'Helvetica Neue', sans-serif;
+        font-weight:500;
+        color: #ffd000;
+        font-size: 14px;
+        margin:16px;
+        height:30px;
+        padding:22px;
+        letter-spacing: 3px;
+
+        border-radius:40px; 
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020;
     }
 
 }

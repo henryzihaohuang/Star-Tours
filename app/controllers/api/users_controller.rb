@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:uid, :first_name, :last_name, :email, :image_url, :google_token, :google_refresh_token)
+        params.require(:user).permit(:first_name, :last_name, :email, :image_url, :auth0_user_id)
     end
 
 end

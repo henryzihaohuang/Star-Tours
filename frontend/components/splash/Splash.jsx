@@ -10,14 +10,10 @@ function Splash () {
 
   const handleDemo = () => {
     dispatch(login({ 
-      id: 1,
-      firstName: "Carrie",
-      lastName: "Fisher",
       email: "carriefisher4ever@gmail.com",
-      password: "password123" 
+      password: "password123",
     }));
   };
-
 
   return (
     <section>

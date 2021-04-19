@@ -6,7 +6,12 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    currentUser:{
+        firstName: currentUser.first_name,
+        lastName: currentUser.last_name,
+        email: currentUser.email,
+        imageUrl: currentUser.image_url
+    }
 });
 
 const logoutCurrentUser = () => ({
@@ -26,6 +31,7 @@ export const signup = (formUser) => {
         last_name: formUser.lastName,
         email: formUser.email,
         password: formUser.password,
+        image_url: formUser.imageUrl
     }
 
     return (dispatch) => {
@@ -35,17 +41,9 @@ export const signup = (formUser) => {
     }
 } 
 
-
 export const login = (formUser) => {
-    const translatedUser = {
-        first_name: formUser.firstName,
-        last_name: formUser.lastName,
-        email: formUser.email,
-        password: formUser.password,
-    }
-    
     return (dispatch) => {
-        return postSession(translatedUser)
+        return postSession(formUser)
             .then(
                 (currentUser)=> dispatch(receiveCurrentUser(currentUser)),
                 (errors) => dispatch(receiveErrors(errors.responseJSON)));
