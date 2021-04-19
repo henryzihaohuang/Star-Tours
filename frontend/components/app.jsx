@@ -14,7 +14,7 @@ const App = ({state}) => {
                 <ProtectedRoute exact path="/character/:character" component={Character} />
             </Switch>
         </div>
-    )
+    );
 };
 
 export default App;
