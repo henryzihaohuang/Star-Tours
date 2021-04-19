@@ -12,7 +12,10 @@ Star Tours is a single-page application designed to intake all your favorite Sta
   <img src="https://media.giphy.com/media/phMHahfz4jrgYvKqRO/giphy.gif" width="480" height="246" frameBorder="0" allowFullScreen>
 </p>
 
- Star Tours utilizes Ruby on Rails in the backend and React, Redux, and NodeJS in the frontend. 
+### Star Tours utilizes Ruby on Rails in the backend and React, Redux, and NodeJS in the frontend. 
+
+To load the application please `npm install && bundle install`, create the db, migrate, and run `npm run start` && `rails s`.
+
 -------------
 
 # Standout Features
