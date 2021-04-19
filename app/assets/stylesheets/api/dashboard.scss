@@ -9,27 +9,6 @@
     justify-content: space-around;
 }
 
-.character-list-container{
-    font-family:'Helvetica Neue', sans-serif;
-    font-weight:500;
-    color: #ffd000;
-    font-size: 14px;
-    margin-left:160px;
-    margin-bottom: 33px;
-    height:30px;
-    padding:22px;
-    letter-spacing: 3px;
-
-    border-radius:40px; 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #202020;
-}
-
 .logout-btn{
     font-family:'Helvetica Neue', sans-serif;
     font-weight:500;
@@ -50,7 +29,7 @@
     background-color: #202020;
 }
 
-.logout-btn:hover, .character-list-container:hover{
+.logout-btn:hover{
     color:black;
     background-color: #ffd000;
     cursor:pointer;

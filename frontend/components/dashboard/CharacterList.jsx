@@ -23,15 +23,12 @@ function CharacterList (){
 
     const shuffle = (peopleArray) => {
         let currentIndex = peopleArray.length, temporaryValue, randomIndex;
-    
-        // While there remain elements to shuffle...
+
         while (0 !== currentIndex) {
     
-            // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex -= 1;
-    
-            // And swap it with the current element.
+
             temporaryValue = peopleArray[currentIndex];
             peopleArray[currentIndex] = peopleArray[randomIndex];
             peopleArray[randomIndex] = temporaryValue;
@@ -48,22 +45,23 @@ function CharacterList (){
             { shuffle(people).map((characterCard, idx) => (
                 <div>
                     <span key={idx} className="character-list-container">
+                        <div></div>
                         {characterCard.name}  
                         <div onClick={() => handleAddFavorite(characterCard.id)}>+</div>
                     </span>
-                    <div>
-                        <span>Gender: {characterCard.gender}</span>
-                        <span>Birth year: {characterCard.birth_year}</span>
-                        <span>Skin color: {characterCard.skin_color}</span>
-                        <span>Hair color: {characterCard.hair_color}</span>
-                        <span>Height: {characterCard.height} cm</span>
-                        <span>Eye color: {characterCard.eye_color}</span>
-                        <span>Weight: {characterCard.mass} kg</span>
+                    <div className="character-list-item-bio">
+                        <span key={`${idx}-id`}>Id: {characterCard.id}</span>
+                        <span key={`${idx}-gender`}> Gender: {characterCard.gender}</span>
+                        <span key={`${idx}-birth`}> Birth year: {characterCard.birth_year}</span>
+                        <span key={`${idx}-skin`}> Skin color: {characterCard.skin_color}</span>
+                        <span key={`${idx}-hair`}> Hair color: {characterCard.hair_color}</span>
+                        <span key={`${idx}-height`}> Height: {characterCard.height} cm</span>
+                        <span key={`${idx}-eye`}> Eye color: {characterCard.eye_color}</span>
+                        <span key={`${idx}-weight`}> Weight: {characterCard.mass} kg</span>
                     </div>
                 </div>
-                
                 ))
-            };
+            }
             </Col>
         </Row>
     )
