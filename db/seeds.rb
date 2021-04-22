@@ -1,0 +1,1 @@
+User.create!(first_name: "Carrie", last_name: "Fisher", email: "carriefisher4ever@gmail.com", password: "password123", auth0_user_id: "google-oauth2|110724262900483814632", image_url: "https://i.ibb.co/zbZCqYf/carrie-fisher-foto.jpg")
