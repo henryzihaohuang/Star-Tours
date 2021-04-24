@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoadingSpinner from '../dashboard/LoadingSpinner';
@@ -17,11 +16,6 @@ function Character(props){
     if (!people) return <LoadingSpinner />;
     return(
         <div className="character-show-container">
-
-            <Link to="/people">
-              <img src="https://i.ibb.co/2t6w5Tk/new-story-assessment-logo.png" alt="star-tours-logo" style={{width:'100px'}}/>
-            </Link>
-
             <div>
                 <Profile />
             </div>
